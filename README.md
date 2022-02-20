@@ -82,14 +82,34 @@ local Tab = Window:NewTab("TP")
 local Section = Tab:NewSection("Tp")
 Section:NewButton("TP1", "", function()
  local CFrameEnd = CFrame.new(1046.54431, 16.2735653, 1426.11328, 0.00888089277, 4.00218632e-08, 0.999960542, -9.50167589e-08, 1, -3.91795751e-08, -0.999960542, -9.46650616e-08, 0.00888089277) --ใส่CFrame
-local Time = 5 --ใส่เวลาที่จะไปถึง
+local Time = 12 --ใส่เวลาที่จะไปถึง
 local tween = game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(Time), {CFrame = CFrameEnd}) tween:Play()
 end)
 
 Section:NewButton("TP2", "", function()
  local CFrameEnd = CFrame.new(-676.812073, 7.85225534, 1578.31421, 0.22935541, -6.67799895e-08, -0.973342717, -4.83182454e-08, 1, -7.99944715e-08, 0.973342717, 6.53773782e-08, 0.22935541) --ใส่CFrame
-local Time = 5 --ใส่เวลาที่จะไปถึง
+local Time = 12 --ใส่เวลาที่จะไปถึง
 local tween = game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(Time), {CFrame = CFrameEnd}) tween:Play()
+end)
+
+Section:NewButton("TP3", "", function()
+ local CFrameEnd = CFrame.new(-1336.93262, 11.852562, 470.353912, -0.943066895, 2.66542033e-09, -0.332603157, 8.61207494e-11, 1, 7.76962761e-09, 0.332603157, 7.29863459e-09, -0.943066895) --ใส่CFrame
+local Time = 12 --ใส่เวลาที่จะไปถึง
+local tween = game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(Time), {CFrame = CFrameEnd}) tween:Play()
+end)
+
+Section:NewButton("TP4", "", function()
+ local CFrameEnd = CFrame.new(-1452.5332, 7.28686285, -2829.59692, -0.891351223, -8.18219448e-08, -0.453313351, -8.83808227e-08, 1, -6.71409506e-09, 0.453313351, 3.40795907e-08, -0.891351223) --ใส่CFrame
+local Time = 15 --ใส่เวลาที่จะไปถึง
+local tween = game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(Time), {CFrame = CFrameEnd}) tween:Play()
+end)
+
+
+
+local Section = Tab:NewSection("TP (Notween)")
+
+Section:NewButton("TP1", "", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1046.4344482421875, 16.273563385009766, 1431.072021484375)
 end)
 
 local Tab = Window:NewTab("Setting")
@@ -103,4 +123,8 @@ if state then
 end)
 Section:NewSlider("Level Lock", "", 2200, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+Section:NewTextBox("level Lock", "", function(txt)
+	print(txt)
 end)
